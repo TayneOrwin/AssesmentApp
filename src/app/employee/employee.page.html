@@ -1,0 +1,65 @@
+<ion-header>
+  
+  <ion-toolbar>
+    <ion-title >Employee </ion-title>
+    
+    
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar
+    showCancelButton
+    searchIcon="search"
+    animated
+    cancelButtonIcon
+    
+    (search)="searchEmployee($event)"
+    placeholder="Search Employee"
+    ></ion-searchbar>
+   
+  </ion-toolbar>
+</ion-header>
+  <!-- (click)="searchEmployee($event)" -->
+  <ion-content class="ion-margin">
+    
+    <ion-grid class="ion-margin">
+      <ion-row class = "ion-justify-content-end">
+        <ion-col size="3">
+        
+            <ion-button (click)="createModal()" >Create Employee</ion-button>
+          
+        </ion-col>
+        
+      </ion-row>
+      <ion-row>
+        
+        <ion-col size="2"   class="ion-align-self-sart"><h2>Name</h2></ion-col>
+        <ion-col size="2"   class="ion-align-self-sart"><h2>Surname</h2></ion-col>
+        <ion-col size="2"   class="ion-align-self-sart"><h2>DOB</h2></ion-col>
+        <ion-col size="2"   class="ion-align-self-sart"><h2>Salary</h2></ion-col>
+        <ion-col size="2"   class="ion-align-self-sart"><h2>Position</h2></ion-col>
+        <ion-col size="2"   class="ion-align-self-sart"><h2>Line Manager</h2></ion-col>
+        <ion-col size="2" class="ion-align-sellf-start"><h2></h2></ion-col>
+    
+        <ion-col  class="ion-align-self-start"><h2></h2></ion-col>
+        <ion-col  class="ion-align-self-start"><h2></h2></ion-col>
+        <ion-col  class="ion-align-self-start"><h2></h2></ion-col>
+      </ion-row>
+
+
+      <ion-row *ngFor="let employee of Employees">
+        <ion-col size="2" >{{employee.Name}}</ion-col>
+        <ion-col size="2" >{{employee.Surname}}</ion-col>
+        <ion-col size="2"><ion-button (click)="viewAddress(employee)" >View Address</ion-button></ion-col>
+        <ion-col size="2"><ion-button (click)="viewDetails(employee)">Banking Details</ion-button></ion-col>
+        
+        <ion-col> <ion-button (click)="UpdateModal(employee)" fill="clear">
+          <ion-icon slot="icon-only" name="Create"></ion-icon>
+        </ion-button>
+        </ion-col>
+        <ion-col><ion-button (click)="DeleteModal(employee)" fill="clear">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+    </ion-button>
+   </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

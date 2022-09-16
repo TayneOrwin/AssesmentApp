@@ -8,9 +8,14 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  }
+    path: 'employee',
+    loadChildren: () => import('./employee/employee.module').then( m => m.EmployeePageModule)
+  },
+  {
+    path: 'employee-structure',
+    loadChildren: () => import('./employee-structure/employee-structure.module').then( m => m.EmployeeStructurePageModule)
+  },
+
 ];
 
 @NgModule({
