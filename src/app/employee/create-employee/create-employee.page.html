@@ -10,46 +10,64 @@
     <ion-grid >
 
       <ion-row>
-        <ion-col size="8">
-          <p>Employee Title:</p>
-             </ion-col>
-
-             <ion-col size="4">
-              <select  placeholder="Please select a title" class="form-control" formControlName="Title" (click)="select()" ng-init="value=null" >
-                <option>Select your Title</option>
-                <option option *ngFor="let Title of this.Titles">{{Title.Description}}</option>
-              </select>
-             </ion-col> 
-
              <ion-col size="8">
               <p>Access Role:</p>
                  </ion-col>
     
                  <ion-col size="4">
-                  <select [(ngModel)]="value" placeholder="Please select Access Role" class="form-control" formControlName="AccessRole" (click)="selectRole()" ng-init="value=null" >
+                  <select  placeholder="Please select Access Role" class="form-control" formControlName="AccessRole" [(ngModel)]="AccessRoleValue" ng-init="value=null" >
                     <option>Select Access Role</option>
-                    <option option *ngFor="let role of this.AccessRole">{{role.Description}}</option>
+                    <option option *ngFor="let role of this.AccessRole">{{role.roleDescription}}</option>
                   </select>
-                 </ion-col> 
+                 </ion-col>
+                 
+                 
+                 <ion-col size="8">
+                  <p>Manager:</p>
+                     </ion-col>
+                 <ion-col size="4">
+                  <select  placeholder="Please select Line Manager" class="form-control" formControlName="Manager" [(ngModel)]="ManagerValue"  ng-init="value=null" >
+                     <option>Select Reporting Manager</option>
+                     <option option *ngFor="let manager of this.Manager">{{manager.name}}</option>
+                   </select>
+                     </ion-col> 
+
+
+
+             
 
           <ion-col size="8">
-       <p>Employee Name:</p>
+       <p>Name:</p>
           </ion-col>
           <ion-col size="4">
        <ion-input placeholder="Employee Name" class="form-control" formControlName="Name"></ion-input>
           </ion-col> 
           <ion-col size="8">
-            <p>Employee Surname:</p>
+            <p>Surname:</p>
                </ion-col>
                <ion-col size="4">
             <ion-input placeholder="Surname" class="form-control" formControlName="Surname"></ion-input>
                </ion-col> 
-               <ion-col size="8">
-                <p>Email Address:</p>
-                   </ion-col>
-                   <ion-col size="4">
-                <ion-input placeholder="Email" class="form-control" formControlName="Email"></ion-input>
-                   </ion-col> 
+               
+                   <ion-col size="8">
+                    <p>Salary:</p>
+                       </ion-col>
+                       <ion-col size="4">
+                    <ion-input placeholder="R0.00" class="form-control" type="amount" min="1" oninput="this.value = Math.abs(this.value)" class="textbox" formControlName="Salary"></ion-input>
+                       </ion-col> 
+
+     
+                           <ion-col size="8">
+                            <p>Date Of Birth:</p>
+                               </ion-col>
+                               <ion-col size="4">
+                                <ion-datetime  #date  locale="en-GB-u-hc-h12" class="form-control" formControlName = "Date"></ion-datetime>
+                               </ion-col> 
+            
+                         
+                     
+                 
+             
               
   
       </ion-row>

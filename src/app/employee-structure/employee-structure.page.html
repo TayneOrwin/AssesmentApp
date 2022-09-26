@@ -1,9 +1,54 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Breakdown of Employee Structure</ion-title>
+    <ion-title>Breakdown of Employee Structure by Manager</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-toolbar>
+  <ion-searchbar
+  showCancelButton
+  searchIcon="search"
+  animated
+  cancelButtonIcon
+  
+  (search)="searchRequest($event)"
+  placeholder="Search Manager"
+  ></ion-searchbar>
+ 
+</ion-toolbar>
 
-</ion-content>
+
+
+    <ion-grid class="ion-margin">
+      <ion-row class = "ion-justify-content-end">
+
+        
+
+
+      </ion-row>
+      <ion-card *ngFor="let employee of this.Employees">
+<ion-avatar><img src="{{employee.profileImage}}" alt=""></ion-avatar>
+ 
+
+<ion-item>
+  <ion-icon name="pin" slot="start"></ion-icon>
+  <ion-label>Manager ID: {{employee.ManagerID}}  </ion-label>
+
+ 
+  <ion-card-content>
+    <ion-label > Manager Name: {{employee.name}} </ion-label>
+    <ion-label>Surname: {{employee.surname}}</ion-label>  
+    <ion-label> Date of Birth: {{employee.dob}}</ion-label> 
+     <ion-label>Salary: {{employee.salary}}</ion-label> 
+  
+     <ion-button (click)="viewSub(employee.ManagerID)">View Subordinate Employes</ion-button>
+    </ion-card-content>
+
+
+</ion-item>
+
+
+
+
+
+

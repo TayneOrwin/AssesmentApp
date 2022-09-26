@@ -1,0 +1,41 @@
+
+  <ion-content class="ion-margin">
+
+    <ion-grid class="ion-margin">
+      <ion-row class = "ion-justify-content-end">
+        <ion-col size="3">
+          Employee Details
+        </ion-col>
+        
+
+
+      </ion-row>
+      <ion-card *ngFor="let employee of this.Employees">
+<ion-avatar><img src="{{employee.profileImage}}" alt=""></ion-avatar>
+ 
+
+<ion-item>
+  <ion-icon name="pin" slot="start"></ion-icon>
+  <ion-label>Employee No: {{employee.EmployeeNumber}}  </ion-label>
+
+ 
+  <ion-card-content>
+    <ion-label > Employee Name: {{employee.name}} </ion-label>
+    <ion-label>Surname: {{employee.surname}}</ion-label>  
+    <ion-label> Date of Birth: {{employee.dob}}</ion-label> 
+     <ion-label>Salary: {{employee.salary}}</ion-label> 
+    <ion-label>Access Role ID: {{employee.AccessRoleID}}  </ion-label> 
+     <ion-label>Manager ID: {{employee.ManagerID}}</ion-label> 
+    </ion-card-content>
+
+
+</ion-item>
+
+
+
+
+      </ion-card>
+
+
+    </ion-grid>
+</ion-content>
