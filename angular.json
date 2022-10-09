@@ -101,7 +101,7 @@
             "scripts": [],
             "assets": [
               {
-                                "input": "src/",
+                                "input": "src/"
     
               },
               {
